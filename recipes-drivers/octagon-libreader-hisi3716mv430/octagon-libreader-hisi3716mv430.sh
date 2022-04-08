@@ -1,5 +1,5 @@
 #!/bin/sh
 echo "libreader start!!!"
 
-/usr/bin/libreader 720P_50
+/usr/bin/libreader 1080P_50
 sleep 2
