@@ -27,6 +27,7 @@ SRC_URI += "http://define-sw.dyndns.tv/openatv/openpli/octagon-linux-${PV}-${SRC
     file://defconfig \
     file://initramfs.cpio.gz;unpack=0 \
     file://findkerneldevice.py \
+    file://fix-multiple-defs-yyloc.patch \
 "
 
 S = "${WORKDIR}/linux-${PV}"
@@ -40,7 +41,7 @@ KERNEL_OUTPUT = "arch/${ARCH}/boot/${KERNEL_IMAGETYPE}"
 
 KERNEL_EXTRA_ARGS = "EXTRA_CFLAGS=-Wno-attribute-alias"
 
-FILES_${KERNEL_PACKAGE_NAME}-image = "/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} /${KERNEL_IMAGEDEST}/findkerneldevice.py"
+FILES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} /${KERNEL_IMAGEDEST}/findkerneldevice.py"
 
 kernel_do_configure_prepend() {
 	install -d ${B}/usr

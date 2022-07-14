@@ -100,7 +100,7 @@ IMAGE_CMD_octagonubi_append = "\
     mkdir -p ${DEPLOY_DIR_IMAGE}/userdata; \
     mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs1; \
     mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs2; \
-    cp -a ${IMAGE_ROOTFS}/* ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs1/; \
+    cp -Rf ${IMAGE_ROOTFS}/* ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs1/; \
     mkfs.ubifs -F -d ${DEPLOY_DIR_IMAGE}/userdata -m 2048 -o ${DEPLOY_DIR_IMAGE}/rootfs.ubifs -e 126976 -c 3800; \
     echo \[ubifs\] > ${DEPLOY_DIR_IMAGE}/rootfs.ubicfg; \
     echo mode=ubi >> ${DEPLOY_DIR_IMAGE}/rootfs.ubicfg; \
@@ -114,11 +114,10 @@ IMAGE_CMD_octagonubi_append = "\
     cd ${IMAGE_ROOTFS}; \
     tar -cvf ${DEPLOY_DIR_IMAGE}/rootfs.tar -C ${IMAGE_ROOTFS} .; \
     mv ${DEPLOY_DIR_IMAGE}/rootfs.tar ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/rootfs.tar; \
-    bzip2 ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/rootfs.tar; \
     cp ${DEPLOY_DIR_IMAGE}/uImage ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
     cp ${DEPLOY_DIR_IMAGE}/uImage ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/${KERNEL_FILE}; \
     if [ -e ${DEPLOY_DIR_IMAGE}/logo-${DISTRO_NAME}.img ]; then \
-        cp -f ${DEPLOY_DIR_IMAGE}/logo-${DISTRO_NAME}.img ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/logo.img; \
+    cp -Rf ${DEPLOY_DIR_IMAGE}/logo-${DISTRO_NAME}.img ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/logo.img; \
     fi; \
     echo ${IMAGEVERSION} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
     cd ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions; \
