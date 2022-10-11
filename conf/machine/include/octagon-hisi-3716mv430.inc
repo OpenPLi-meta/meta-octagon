@@ -101,7 +101,7 @@ IMAGE_CMD_octagonubi_append = "\
     mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs1; \
     mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs2; \
     cp -Rf ${IMAGE_ROOTFS}/* ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs1/; \
-    mkfs.ubifs -F -d ${DEPLOY_DIR_IMAGE}/userdata -m 2048 -o ${DEPLOY_DIR_IMAGE}/rootfs.ubifs -e 126976 -c 3800; \
+    mkfs.ubifs -F -d ${DEPLOY_DIR_IMAGE}/userdata -m 4096 -o ${DEPLOY_DIR_IMAGE}/rootfs.ubifs -e 253952 -c 1900; \
     echo \[ubifs\] > ${DEPLOY_DIR_IMAGE}/rootfs.ubicfg; \
     echo mode=ubi >> ${DEPLOY_DIR_IMAGE}/rootfs.ubicfg; \
     echo image=${DEPLOY_DIR_IMAGE}/rootfs.ubifs >> ${DEPLOY_DIR_IMAGE}/rootfs.ubicfg; \
@@ -109,11 +109,12 @@ IMAGE_CMD_octagonubi_append = "\
     echo vol_type=dynamic >> ${DEPLOY_DIR_IMAGE}/rootfs.ubicfg; \
     echo vol_name=ubifs >> ${DEPLOY_DIR_IMAGE}/rootfs.ubicfg; \
     echo vol_flags=autoresize >> ${DEPLOY_DIR_IMAGE}/rootfs.ubicfg; \
-    ubinize -o ${DEPLOY_DIR_IMAGE}/${ROOTFS_FILE} -m 2048 -p 0x20000 ${DEPLOY_DIR_IMAGE}/rootfs.ubicfg; \
+    ubinize -o ${DEPLOY_DIR_IMAGE}/${ROOTFS_FILE} -m 4096 -p 0x40000 ${DEPLOY_DIR_IMAGE}/rootfs.ubicfg; \
 	mv ${DEPLOY_DIR_IMAGE}/${ROOTFS_FILE} ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/${ROOTFS_FILE}; \
     cd ${IMAGE_ROOTFS}; \
     tar -cvf ${DEPLOY_DIR_IMAGE}/rootfs.tar -C ${IMAGE_ROOTFS} .; \
     mv ${DEPLOY_DIR_IMAGE}/rootfs.tar ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/rootfs.tar; \
+    bzip2 ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/rootfs.tar; \
     cp ${DEPLOY_DIR_IMAGE}/uImage ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
     cp ${DEPLOY_DIR_IMAGE}/uImage ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/${KERNEL_FILE}; \
     if [ -e ${DEPLOY_DIR_IMAGE}/logo-${DISTRO_NAME}.img ]; then \
