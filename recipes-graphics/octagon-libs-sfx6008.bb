@@ -1,4 +1,4 @@
-SRCDATE = "20220328"
+SRCDATE = "20221013"
 
 require octagon-libs.inc
 
@@ -13,5 +13,5 @@ do_install_append() {
 }
 
 
-SRC_URI[md5sum] = "dc5b604fe85604d8efa9c18d9d7c6332"
-SRC_URI[sha256sum] = "d41044cbd6e408614d0eae67e3481ace16e9f832d4b426c3d6e28ef4c7001a2d"
+SRC_URI[md5sum] = "6f214074a463e4c04265fbbec8636d63"
+SRC_URI[sha256sum] = "0bae3d5e9621bf959b6e1b00d9a744f2eea61986c0c9e07ff752e84fc13192d5"
