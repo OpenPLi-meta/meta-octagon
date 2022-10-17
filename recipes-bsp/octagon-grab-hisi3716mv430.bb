@@ -15,7 +15,7 @@ RPROVIDES_${PN}  = "aio-grab"
 RREPLACES_${PN}  = "aio-grab"
 RCONFLICTS_${PN} = "aio-grab"
 
-SRC_URI = "http://source.mynonpublic.com/octagon/${SOC_FAMILY}-grab-${SRCDATE}.tar.gz"
+SRC_URI = "http://define-sw.dyndns.tv/openatv/${SOC_FAMILY}-grab-${SRCDATE}.tar.gz"
 
 S = "${WORKDIR}"
 
