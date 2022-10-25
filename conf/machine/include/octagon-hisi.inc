@@ -72,6 +72,7 @@ PREFERRED_PROVIDER_virtual/kernel = "linux-octagon"
 PREFERRED_PROVIDER_virtual/egl = "octagon-opengl-${SOC_FAMILY}" 
 PREFERRED_PROVIDER_virtual/libgles1 = "octagon-opengl-${SOC_FAMILY}"
 PREFERRED_PROVIDER_virtual/libgles2 = "octagon-opengl-${SOC_FAMILY}"
+PREFERRED_PROVIDER_kodi = "kodi"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "octagon-blindscan-${SOC_FAMILY}"
 
 PREFERRED_RPROVIDER_showiframe = "octagon-showiframe-${SOC_FAMILY}"

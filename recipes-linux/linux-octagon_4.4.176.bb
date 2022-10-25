@@ -26,9 +26,11 @@ RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "kernel-image-${KERNEL_VERSION}"
 SRC_URI += "http://define-sw.dyndns.tv/openatv/openpli/octagon-linux-${PV}-${SRCDATE}.tar.gz \
     file://defconfig \
     file://initramfs.cpio.gz;unpack=0 \
-    file://findkerneldevice.py \
+    file://findkerneldevice.sh \
     file://fix-multiple-defs-yyloc.patch \
 "
+
+COMPATIBLE_MACHINE = "sfx6008"
 
 S = "${WORKDIR}/linux-${PV}"
 B = "${WORKDIR}/build"
@@ -41,7 +43,7 @@ KERNEL_OUTPUT = "arch/${ARCH}/boot/${KERNEL_IMAGETYPE}"
 
 KERNEL_EXTRA_ARGS = "EXTRA_CFLAGS=-Wno-attribute-alias"
 
-FILES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} /${KERNEL_IMAGEDEST}/findkerneldevice.py"
+FILES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} /${KERNEL_IMAGEDEST}/findkerneldevice.sh"
 
 kernel_do_configure_prepend() {
 	install -d ${B}/usr
@@ -51,13 +53,13 @@ kernel_do_configure_prepend() {
 kernel_do_install_append() {
 	install -d ${D}/${KERNEL_IMAGEDEST}
 	install -m 0755 ${KERNEL_OUTPUT} ${D}/${KERNEL_IMAGEDEST}
-	install -m 0755 ${WORKDIR}/findkerneldevice.py ${D}/${KERNEL_IMAGEDEST}
+	install -m 0755 ${WORKDIR}/findkerneldevice.sh ${D}${KERNEL_IMAGEDEST}
 }
 
 pkg_postinst_kernel-image () {
     if [ "x$D" == "x" ]; then
         if [ -f /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} ] ; then
-            python /${KERNEL_IMAGEDEST}/findkerneldevice.py
+            /${KERNEL_IMAGEDEST}/./findkerneldevice.sh
             dd if=/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} of=/dev/kernel
         fi
     fi

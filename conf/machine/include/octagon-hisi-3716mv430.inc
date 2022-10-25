@@ -118,7 +118,7 @@ IMAGE_CMD_octagonubi_append = "\
     cp ${DEPLOY_DIR_IMAGE}/uImage ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
     cp ${DEPLOY_DIR_IMAGE}/uImage ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/${KERNEL_FILE}; \
     if [ -e ${DEPLOY_DIR_IMAGE}/logo-${DISTRO_NAME}.img ]; then \
-    cp -Rf ${DEPLOY_DIR_IMAGE}/logo-${DISTRO_NAME}.img ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/logo.img; \
+    cp -f ${DEPLOY_DIR_IMAGE}/logo-${DISTRO_NAME}.img ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/logo.img; \
     fi; \
     echo ${IMAGEVERSION} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
     cd ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions; \
@@ -128,8 +128,8 @@ IMAGE_CMD_octagonubi_append = "\
     zip -j ${DISTRO_NAME}-${DISTRO_VERSION}-${MACHINE}_usb.zip ${DEPLOY_DIR_IMAGE}/usb_update.bin ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/bootargs.bin ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/fastboot.bin ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/apploader.bin; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.ubi; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.ubifs; \
-	rm -f ${DEPLOY_DIR_IMAGE}/.ubifs; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.manifest; \
+    rm -f ${DEPLOY_DIR_IMAGE}/.ubifs; \
     rm -f ${DEPLOY_DIR_IMAGE}/.manifest; \
     rm -Rf ${DEPLOY_DIR_IMAGE}/usb_update.bin; \
     rm -Rf ${IMAGEDIR}; \
