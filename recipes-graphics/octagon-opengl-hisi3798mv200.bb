@@ -5,4 +5,4 @@ SRC_URI[sha256sum] = "7614f03c1db3641ea8793c28fcfdaa74cf45a31f89a7df14114b522fb5
 
 require octagon-opengl.inc
 
-COMPATIBLE_MACHINE = "^(sf8008|sf8008m)$"
+COMPATIBLE_MACHINE = "sf8008|sf8008m"
