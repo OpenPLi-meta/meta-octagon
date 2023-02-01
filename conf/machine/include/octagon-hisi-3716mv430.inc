@@ -23,6 +23,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = "\
 	kernel-module-cdfs \
+	${@bb.utils.contains('MACHINE_FEATURES', 'wol', 'octagon-ethwol' , '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'partitions-by-name' , '', d)} \
 	firmware-carl9170 \
 	firmware-htc7010 \
