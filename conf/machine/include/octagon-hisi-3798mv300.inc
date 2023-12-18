@@ -3,12 +3,6 @@ KERNEL_MODULE_AUTOLOAD += "xfs"
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
 
-
-MTD_KERNEL = "mmcblk0p12"
-MTD_ROOTFS = "mmcblk0p16"
-KERNEL_FILE = "kernel.bin"
-ROOTFS_FILE = "rootfs.tar.bz2"
-
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
     octagon-dvb-modules-${MACHINE} \
     octagon-loadmodules-${SOC_FAMILY} \ 
