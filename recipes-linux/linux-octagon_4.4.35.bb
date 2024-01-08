@@ -42,7 +42,7 @@ SRC_URI_append_sf8008m += " \
 	file://fix-index-for-usb.patch \
 "
 
-SRC_URI:append:sf8008 = " \
+SRC_URI_append_sf8008 = " \
 	file://emmc_ks81aa80_05s000_reboot.patch \
 "
 
