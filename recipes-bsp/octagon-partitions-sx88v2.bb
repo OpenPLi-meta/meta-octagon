@@ -13,7 +13,7 @@ S = "${WORKDIR}/partitions"
 
 SRC_URI = "http://define-sw.dyndns.tv/openatv/openpli/${MACHINE}-partitions-${SRCDATE}.zip"
 
-ALLOW_EMPTY_${PN} = "1"
+ALLOW_EMPTY:${PN} = "1"
 do_configure[nostamp] = "1"
 do_install[noexec] = "1"
 
@@ -36,4 +36,4 @@ addtask deploy before do_build after do_install
 SRC_URI[md5sum] = "15ac1bb9edeb76d68f2173f49baa7f70"
 SRC_URI[sha256sum] = "01b324aa5a4a9125387b974622d4b4db3c4e124b4f6c4aaff404a574be15fd17"
 
-INSANE_SKIP_${PN} += "already-stripped"
+INSANE_SKIP:${PN} += "already-stripped"

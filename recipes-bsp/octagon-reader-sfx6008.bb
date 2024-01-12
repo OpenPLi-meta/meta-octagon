@@ -4,7 +4,7 @@ PRIORITY = "optional"
 LICENSE = "CLOSED"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-RDEPENDS_${PN} = "libsdl"
+RDEPENDS:${PN} = "libsdl"
 
 COMPATIBLE_MACHINE = "sfx6008"
 
@@ -25,7 +25,7 @@ do_install() {
 do_package_qa() {
 }
 
-FILES_${PN}  = "${bindir}/libreader"
+FILES:${PN}  = "${bindir}/libreader"
 
 SRC_URI[md5sum] = "98c3574db4b0c5c5a2aeb283293b718d"
 SRC_URI[sha256sum] = "a12db5cfea63c9745c1e01874e84fe1c0acceb6454e63720f4f7c1a952898c3c"

@@ -7,7 +7,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 PR = "${SRCDATE}"
 
 PROVIDES = "virtual/libgles1 virtual/libgles2 virtual/egl"
-RPROVIDES_${PN} = "virtual/libgles1 virtual/libgles2 virtual/egl libEGL.so libGLESv2.so libmali.so"
+RPROVIDES:${PN} = "virtual/libgles1 virtual/libgles2 virtual/egl libEGL.so libGLESv2.so libmali.so"
 
 SRC_URI = "http://source.mynonpublic.com/octagon/${SOC_FAMILY}-opengl-${SRCDATE}.tar.gz"
 
@@ -18,7 +18,7 @@ S = "${WORKDIR}/usr"
 do_configure[noexec] = "1"
 
 # Generate a mali rules script
-do_compile_append () {
+do_compile:append () {
 	cat > 50-mali.rules << EOF
 KERNEL=="mali0", MODE="0660", GROUP="video"
 EOF
@@ -52,7 +52,7 @@ do_install() {
 do_package_qa() {
 }
 
-FILES_${PN} = "${libdir}/* /etc/udev/rules.d/50-mali.rules"
-FILES_${PN}-dev = "${includedir}/*"
+FILES:${PN} = "${libdir}/* /etc/udev/rules.d/50-mali.rules"
+FILES:${PN}-dev = "${includedir}/*"
 
-INSANE_SKIP_${PN} += "already-stripped dev-so ldflags"
+INSANE_SKIP:${PN} += "already-stripped dev-so ldflags"

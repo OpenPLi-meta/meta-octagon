@@ -8,7 +8,7 @@ SRC_URI = "file://uwe5621.zip"
 S = "${WORKDIR}"
 
 PACKAGES = "${PN}"
-FILES_${PN} += "${nonarch_base_libdir}/firmware"
+FILES:${PN} += "${nonarch_base_libdir}/firmware"
 
 do_install() {
     install -d ${D}${nonarch_base_libdir}/firmware/uwewifi

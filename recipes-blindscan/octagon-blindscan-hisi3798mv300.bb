@@ -23,7 +23,7 @@ do_install() {
 do_package_qa() {
 }
 
-FILES_${PN}  = "${bindir}/octagon-blindscan"
+FILES:${PN}  = "${bindir}/octagon-blindscan"
 
 SRC_URI[md5sum] = "0a57a1115872637393eee599f3282517"
 SRC_URI[sha256sum] = "841779dfe25e030b212e4a762f6532e710393efffd99ac2cf1baa50578b394dd"

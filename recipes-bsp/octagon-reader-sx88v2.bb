@@ -4,7 +4,7 @@ PRIORITY = "optional"
 LICENSE = "CLOSED"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-RDEPENDS_${PN} = "libsdl"
+RDEPENDS:${PN} = "libsdl"
 
 COMPATIBLE_MACHINE = "sx88v2"
 
@@ -25,7 +25,7 @@ do_install() {
 do_package_qa() {
 }
 
-FILES_${PN}  = "${bindir}/libreader"
+FILES:${PN}  = "${bindir}/libreader"
 
 SRC_URI[md5sum] = "f01a81a58a053d22cb10fadcde7df79c"
 SRC_URI[sha256sum] = "1667d9d8e66838b29373773f9614a7391f215d1f8941a7269ada3c60529464e7"

@@ -11,9 +11,9 @@ SRCDATE = "20221022"
 PV = "${SRCDATE}"
 PR = "r0"
 
-RPROVIDES_${PN}  = "aio-grab"
-RREPLACES_${PN}  = "aio-grab"
-RCONFLICTS_${PN} = "aio-grab"
+RPROVIDES:${PN}  = "aio-grab"
+RREPLACES:${PN}  = "aio-grab"
+RCONFLICTS:${PN} = "aio-grab"
 
 SRC_URI = "http://define-sw.dyndns.tv/openatv/openpli/${SOC_FAMILY}-grab-${SRCDATE}.tar.gz"
 
@@ -27,7 +27,7 @@ do_install() {
 do_package_qa() {
 }
 
-FILES_${PN}  = "${bindir}/grab"
+FILES:${PN}  = "${bindir}/grab"
 
 SRC_URI[md5sum] = "f17956cfe7abf13bf73df69ea3d344f7"
 SRC_URI[sha256sum] = "7aa36a4d75785efb969d0272b7949ba9b057ab014dfbb1c9fa658f7ecfde2cf9"

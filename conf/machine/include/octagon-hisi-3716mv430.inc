@@ -75,8 +75,8 @@ PREFERRED_PROVIDER_virtual/gstreamer1.0-dvbmediasink ?= "gstreamer1.0-plugin-dvb
 require conf/machine/include/tune-cortexa7.inc
 
 # Qt
-PACKAGECONFIG_GL_pn-qtbase = " "
-PACKAGECONFIG_append_pn-qtbase += " linuxfb no-opengl"
+PACKAGECONFIG_GL:pn-qtbase = " "
+PACKAGECONFIG:append:pn-qtbase = " linuxfb no-opengl"
 
 
 MACHINE_EXTRA_RRECOMMENDS = " \
@@ -92,7 +92,7 @@ IMAGEDIR ?= "octagon/${MACHINE}"
 IMGDEPLOYDIR ?= "${DEPLOY_DIR_IMAGE}"
 IMAGEVERSION := "${DISTRO_NAME}-${DISTRO_VERSION}-${DATE}"
 IMAGEVERSION[vardepsexclude] = "DATE"
-IMAGE_CMD_octagonubi_append = "\
+IMAGE_CMD:octagonubi:append = "\
     mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
     mkdir -p ${DEPLOY_DIR_IMAGE}/userdata; \
     mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs1; \
@@ -133,6 +133,6 @@ IMAGE_CMD_octagonubi_append = "\
     rm -Rf ${DEPLOY_DIR_IMAGE}/userdata; \
     "
 
-IMAGE_CMD_prepend = " \
+IMAGE_CMD:prepend = " \
     rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
     "

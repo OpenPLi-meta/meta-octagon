@@ -1,6 +1,6 @@
 inherit image_types
 
-IMAGE_TYPEDEP_octagonubi = "ubi"
+IMAGE_TYPEDEP:octagonubi = "ubi"
 
 do_image_octagonubi[depends] = " \
     parted-native:do_populate_sysroot \
@@ -10,5 +10,5 @@ do_image_octagonubi[depends] = " \
     octagon-buildimage-native:do_populate_sysroot \
     "
 
-IMAGE_CMD_octagonubi () {
+IMAGE_CMD:octagonubi () {
 }

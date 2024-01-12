@@ -4,7 +4,7 @@ PRIORITY = "optional"
 LICENSE = "CLOSED"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-RDEPENDS_${PN} = "harfbuzz"
+RDEPENDS:${PN} = "harfbuzz"
 
 SRCDATE = "20220305"
 
@@ -36,7 +36,7 @@ do_install() {
 do_package_qa() {
 }
 
-FILES_${PN}  = "${bindir}/hihalt ${sysconfdir}/init.d /usr/script"
+FILES:${PN}  = "${bindir}/hihalt ${sysconfdir}/init.d /usr/script"
 
 SRC_URI[md5sum] = "924c92b27444eb63fae834f8ea20acb6"
 SRC_URI[sha256sum] = "789f343a38fb52d0ff18a70a196d553b5712c5a3a7584e010ea88ab20a95f984"

@@ -2,11 +2,11 @@ SRCDATE = "20221203"
 
 require octagon-libs.inc
 
-SRC_URI_append = " \
+SRC_URI:append = " \
     file://libjpeg.so.8.2.2 \
 "
 
-do_install_append() {
+do_install:append() {
     install -d ${D}${libdir}
     install -m 0755 ${WORKDIR}/libjpeg.so.8.2.2 ${D}${libdir}/
     ln -s libjpeg.so.8.2.2 ${D}${libdir}/libjpeg.so.8
