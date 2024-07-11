@@ -37,6 +37,7 @@ SRC_URI += "http://source.mynonpublic.com/octagon/octagon-linux-${PV}-${SRCDATE}
     file://wifi-linux_4.4.183.patch \
     file://fix-dvbcore-buffer-read.patch \
     file://make-yyloc-declaration-extern.patch \
+    file://fix-build-with-binutils-2.41.patch \
 "
 SRC_URI:append_sf8008m = " \
 	file://fix-index-for-usb.patch \
