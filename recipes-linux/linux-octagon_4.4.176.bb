@@ -32,6 +32,7 @@ SRC_URI += "http://define-sw.dyndns.tv/openatv/openpli/octagon-linux-${PV}-${SRC
     file://initramfs.cpio.gz;unpack=0 \
     file://findkerneldevice.sh \
     file://fix-multiple-defs-yyloc.patch \
+    file://fix-build-with-binutils-2.41.patch \
 "
 
 COMPATIBLE_MACHINE = "sfx6008|sx88v2"
