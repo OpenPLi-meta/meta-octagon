@@ -72,7 +72,7 @@ PREFERRED_RPROVIDER_showiframe = "octagon-showiframe-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_aio-grab = "octagon-grab-${SOC_FAMILY}"
 PREFERRED_PROVIDER_virtual/gstreamer1.0-dvbmediasink ?= "gstreamer1.0-plugin-dvbmediasink"
 
-require conf/machine/include/tune-cortexa7.inc
+require conf/machine/include/arm/armv7a/tune-cortexa7.inc
 
 # Qt
 PACKAGECONFIG_GL:pn-qtbase = " "
