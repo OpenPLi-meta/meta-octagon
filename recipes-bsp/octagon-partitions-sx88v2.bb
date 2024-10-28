@@ -12,7 +12,7 @@ PR = "${SRCDATE}"
 S = "${WORKDIR}/partitions"
 
 SRC_URI = "\
-	http://define-sw.dyndns.tv/openatv/openpli/${MACHINE}-partitions-${SRCDATE}.zip \
+	http://downloads.openpli.org/archive/octagon/${MACHINE}-partitions-${SRCDATE}.zip \
 	file://logo.img \
 	"
 

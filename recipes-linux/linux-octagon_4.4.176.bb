@@ -26,7 +26,7 @@ SRC_URI[mv300.sha256sum] = "e5604bb3576ead02b23861b0dde082a2b219fe7a622d973f7a52
 RPROVIDES:${KERNEL_PACKAGE_NAME}-base = "kernel-${KERNEL_VERSION}"
 RPROVIDES:${KERNEL_PACKAGE_NAME}-image = "kernel-image-${KERNEL_VERSION}"
 
-SRC_URI += "http://define-sw.dyndns.tv/openatv/openpli/octagon-linux-${PV}-${SRCDATE}.tar.gz;name=${KVTYPE} \
+SRC_URI += "http://downloads.openpli.org/archive/octagon/octagon-linux-${PV}-${SRCDATE}.tar.gz;name=${KVTYPE} \
     file://defconfig \
     file://initramfs-subdirboot.cpio.gz;unpack=0 \
     file://initramfs.cpio.gz;unpack=0 \

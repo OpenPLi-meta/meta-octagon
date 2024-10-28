@@ -13,7 +13,7 @@ SRCDATE = "20200703"
 PV = "${SRCDATE}"
 PR = "r0"
 
-SRC_URI = "http://define-sw.dyndns.tv/openatv/openpli/${MACHINE}-libreader-${SRCDATE}.tar.gz"
+SRC_URI = "http://downloads.openpli.org/archive/octagon/${MACHINE}-libreader-${SRCDATE}.tar.gz"
 
 S = "${WORKDIR}"
 

@@ -15,7 +15,7 @@ RPROVIDES:${PN}  = "aio-grab"
 RREPLACES:${PN}  = "aio-grab"
 RCONFLICTS:${PN} = "aio-grab"
 
-SRC_URI = "http://define-sw.dyndns.tv/openatv/openpli/${SOC_FAMILY}-grab-${SRCDATE}.tar.gz"
+SRC_URI = "http://downloads.openpli.org/archive/octagon/${SOC_FAMILY}-grab-${SRCDATE}.tar.gz"
 
 S = "${WORKDIR}"
 
