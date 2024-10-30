@@ -33,8 +33,8 @@ do_install() {
 }
 
 do_install:libjpeg () {
-	rm -r ${PKGDATA_DIR}/runtime-reverse/libjpeg-dev
-	rm -r ${PKGDATA_DIR}/runtime-reverse/libjpeg-dbg
+	[ -d ${PKGDATA_DIR}/runtime-reverse/libjpeg-dev ] && rm -r ${PKGDATA_DIR}/runtime-reverse/libjpeg-dev
+	[ -d ${PKGDATA_DIR}/runtime-reverse/libjpeg-dbg ] && rm -r ${PKGDATA_DIR}/runtime-reverse/libjpeg-dbg
 }
 
 do_package_qa() {
