@@ -32,11 +32,6 @@ do_install() {
 	install -m 0755 ${S}/*.so ${D}${libdir}/
 }
 
-do_install:libjpeg () {
-	[ -e ${PKGDATA_DIR}/runtime-reverse/libjpeg-dev ] && rm -r ${PKGDATA_DIR}/runtime-reverse/libjpeg-dev
-	[ -e ${PKGDATA_DIR}/runtime-reverse/libjpeg-dbg ] && rm -r ${PKGDATA_DIR}/runtime-reverse/libjpeg-dbg
-}
-
 do_package_qa() {
 }
 
