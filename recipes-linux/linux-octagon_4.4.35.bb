@@ -10,7 +10,7 @@ SRCDATE = "20181224"
 
 inherit kernel machine_kernel_pr
 
-MACHINE_KERNEL_PR_append = "r1"
+MACHINE_KERNEL_PR_append = "r2"
 
 SRC_URI[md5sum] = "ad7eab17a5071a0d5f9ff44eb44e027d"
 SRC_URI[sha256sum] = "0654d5aa21c51eaea46f7203014afe60052ec0990a92b9e289e1ca8a2793907c"
@@ -35,8 +35,17 @@ SRC_URI += "http://downloads.openpli.org/archive/octagon/octagon-linux-${PV}-${S
     file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
     file://0003-dont-mark-register-as-const.patch \
     file://wifi-linux_4.4.183.patch \
-    file://fix-dvbcore-buffer-read.patch \
-    file://make-yyloc-declaration-extern.patch \
+    file://move-default-dialect-to-SMB3.patch \
+    file://fix-dvbcore.patch \
+    file://0005-xbox-one-tuner-4.4.patch \
+    file://0006-dvb-media-tda18250-support-for-new-silicon-tuner.patch \
+    file://0007-dvb-mn88472-staging.patch \
+    file://mn88472_reset_stream_ID_reg_if_no_PLP_given.patch \
+    file://fix-multiple-defs-yyloc.patch \
+    file://extend_modules_space.patch \
+    file://fix-build-with-binutils-2.41.patch \
+    file://cfg80211_Add_option_to_report_the_bss_entry_in_connect_result.patch \
+    file://JMS583.patch \
 "
 SRC_URI_append_sf8008m += " \
 	file://fix-index-for-usb.patch \

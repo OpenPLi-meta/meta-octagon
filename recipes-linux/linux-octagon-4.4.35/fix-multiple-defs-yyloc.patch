@@ -1,5 +1,3 @@
-diff --git a/scripts/dtc/dtc-parser.tab.c_shipped b/scripts/dtc/dtc-parser.tab.c_shipped
-index ee1d8c3..a7be9f6 100644
 --- a/scripts/dtc/dtc-parser.tab.c_shipped
 +++ b/scripts/dtc/dtc-parser.tab.c_shipped
 @@ -1196,7 +1196,7 @@ int yychar;
@@ -11,4 +9,3 @@ index ee1d8c3..a7be9f6 100644
  # if defined YYLTYPE_IS_TRIVIAL && YYLTYPE_IS_TRIVIAL
    = { 1, 1, 1, 1 }
  # endif
- 
